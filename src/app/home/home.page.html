@@ -1,20 +1,37 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
+<app-header></app-header>
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">All In One</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-button routerLink="/database" color="primary">Database</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button routerLink="/currency" color="secondary">Currency</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button routerLink="/appel" color="success">Appel</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button routerLink="/admob" color="medium">AdMob</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button routerLink="/camera" color="tertiary">Camera</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button routerLink="/qrcode" color="warning">Qr Code</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </div>
 </ion-content>
