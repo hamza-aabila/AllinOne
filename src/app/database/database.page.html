@@ -13,6 +13,7 @@
     <ion-item-divider>
         <ion-input placeholder="Enter Name"
         [(ngModel)]="name_model"></ion-input>
+        <ion-button (click)=" CapturePhoto()">Prendre Photo</ion-button>
         <ion-button expand="block" (click)="insertRow()">
         Insert Row
         </ion-button>
@@ -20,11 +21,13 @@
     <ion-grid>
         <ion-row>
             <ion-col>ID</ion-col>
+            <ion-col>image</ion-col>
             <ion-col>Name</ion-col>
             <ion-col>Delete</ion-col>
         </ion-row>
         <ion-row *ngFor="let item of row_data">
             <ion-col>{{item.pid}}</ion-col>
+            <ion-col><img src="{{item.Image}}"></ion-col>
             <ion-col>{{item.Name}}</ion-col>
             <ion-col>
                 <ion-button (click)="deleteRow(item)" size="small" color="danger">
