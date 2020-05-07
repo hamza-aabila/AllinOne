@@ -1,8 +1,15 @@
 <app-header></app-header>
 
 <ion-content padding>
- 
-  <ion-button (click)="scanCode()">Scan Code</ion-button>
-  <p>{{scannedResult}}</p>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Info About Qr Code Scanned</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>{{scannedResult}}
+    </ion-card-content>
+  </ion-card>
+  <ion-button expand="block" (click)="scanCode()">Scan Code</ion-button>
+  
 
 </ion-content>

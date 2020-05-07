@@ -8,6 +8,7 @@ import { Platform } from '@ionic/angular';
   styleUrls: ['./database.page.scss'],
 })
 export class DatabasePage implements OnInit {
+
   databaseObj:SQLiteObject;
   name_model:string="";
   row_data:any=[];
@@ -51,7 +52,8 @@ export class DatabasePage implements OnInit {
     alert("Enter Name");
     return;
     }
-    this.databaseObj.executeSql('INSERT INTO ' + this.table_name + ' (Name) VALUES ("' + this.name_model + '")', [])
+    this.databaseObj.executeSql(`INSERT INTO ${this.table_name} (Name) VALUES ('${this.name_model}')
+  `, [])
     .then(() => {
     alert('Row Inserted!');
     this.getRows();
@@ -72,7 +74,7 @@ export class DatabasePage implements OnInit {
     alert("error " + JSON.stringify(e)) });
   }
   deleteRow(item){ 
-    this.databaseObj.executeSql("DELETE FROM " + this.table_name + "WHERE pid = " + item.pid, [])
+    this.databaseObj.executeSql(`DELETE FROM ${this.table_name} WHERE pid = ${item.pid}`, [])
     .then((res) => { alert("Row Deleted!"); this.getRows(); })
     .catch(e => { alert("error " + JSON.stringify(e)) }); 
   }  
